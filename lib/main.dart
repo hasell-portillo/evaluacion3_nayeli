@@ -64,7 +64,7 @@ class MyDrawer extends StatelessWidget {
             title: Text('singlechildscrollview'),
             onTap: () {
               Navigator.of(context).pop(); // Cierra el menú
-              Navigator.of(context).pushNamed('/singlechildscrollview');
+              Navigator.of(context).pushNamed('/draggablescrollablesheet');
             },
           ),
           ListTile(
@@ -72,7 +72,7 @@ class MyDrawer extends StatelessWidget {
             title: Text('draggablescrollablesheet'),
             onTap: () {
               Navigator.of(context).pop(); // Cierra el menú
-              Navigator.of(context).pushNamed('/draggablescrollablesheet');
+              Navigator.of(context).pushNamed('/singlechildscrollview');
             },
           ),
         ],
