@@ -1,7 +1,9 @@
+import 'package:evaluacion3_nayeli/singlechildscrollview.dart';
 import 'package:flutter/material.dart';
-import 'inicio.dart';
-import 'configuracion.dart';
-import 'acerca_de.dart';
+
+import 'customscrollview.dart';
+import 'draggablescrollablesheet.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -9,11 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: MyHomePage(),
       routes: {
-        '/inicio': (context) => InicioPage(),
-        '/configuracion': (context) => ConfiguracionPage(),
-        '/acerca_de': (context) => AcercaDePage(),
+        '/customscrollview': (context) => InicioPage(),
+        '/singlechildscrollview': (context) => ConfiguracionPage(),
+        '/draggablescrollablesheet': (context) => AcercaDePage(),
       },
     );
   }
@@ -24,7 +27,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mi Aplicación Flutter'),
+        title: Text('Mi Aplicación eval3'),
       ),
       drawer: MyDrawer(),
       body: Center(
@@ -41,35 +44,35 @@ class MyDrawer extends StatelessWidget {
       child: ListView(
         children: <Widget>[
           UserAccountsDrawerHeader(
-            accountName: Text('Usuario de Ejemplo'),
-            accountEmail: Text('usuario@example.com'),
+            accountName: Text('hellsel nayeli portillo cubillas'),
+            accountEmail: Text('hellselnayeli@hotmail.com'),
             currentAccountPicture: CircleAvatar(
               backgroundColor: Colors.white,
               child: Icon(Icons.person),
             ),
           ),
           ListTile(
-            leading: Icon(Icons.home),
-            title: Text('Inicio'),
+            leading: Icon(Icons.view_array),
+            title: Text('customscrollview'),
             onTap: () {
               Navigator.of(context).pop(); // Cierra el menú
-              Navigator.of(context).pushNamed('/inicio');
+              Navigator.of(context).pushNamed('/customscrollview');
             },
           ),
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Configuración'),
+            leading: Icon(Icons.single_bed_sharp),
+            title: Text('singlechildscrollview'),
             onTap: () {
               Navigator.of(context).pop(); // Cierra el menú
-              Navigator.of(context).pushNamed('/configuracion');
+              Navigator.of(context).pushNamed('/singlechildscrollview');
             },
           ),
           ListTile(
-            leading: Icon(Icons.info),
-            title: Text('Acerca de'),
+            leading: Icon(Icons.drag_handle_sharp),
+            title: Text('draggablescrollablesheet'),
             onTap: () {
               Navigator.of(context).pop(); // Cierra el menú
-              Navigator.of(context).pushNamed('/acerca_de');
+              Navigator.of(context).pushNamed('/draggablescrollablesheet');
             },
           ),
         ],
